@@ -1,26 +1,27 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom"
 import { HiOutlineHome } from "react-icons/hi";
 
 export default function RegisterForm() {
-  const router = useRouter();
+    const navigate = useNavigate()
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="flex justify-between mb-6">
-          <button
-            onClick={() => router.back()}
-            className="mb-6 text-sm text-indigo-600 hover:text-indigo-500 w-fit hover:underline cursor-pointer"
-          >
-            ← Back
-          </button>
-          <button
-            onClick={() => router.push("/")}
-            className="flex items-center gap-1 text-sm text-indigo-600 hover:text-indigo-500 hover:underline cursor-pointer"
-          >
-            <HiOutlineHome className="h-4 w-4" />
-            Home
-          </button>
+        <button
+        onClick={() => navigate(-1)} 
+        className="mb-6 text-sm text-indigo-600 hover:text-indigo-500 w-fit hover:underline cursor-pointer"
+      >
+        ← Back
+      </button>
+
+      <button
+        onClick={() => navigate("/")}
+        className="flex items-center gap-1 text-sm text-indigo-600 hover:text-indigo-500 hover:underline cursor-pointer"
+      >
+        <HiOutlineHome className="h-4 w-4" />
+        Home
+      </button>
         </div>
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
