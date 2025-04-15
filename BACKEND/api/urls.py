@@ -18,4 +18,6 @@ urlpatterns = [
     path('post/comment-post/', api_views.PostCommentAPIView.as_view()),
     path('post/bookmark-post/', api_views.BookmarkPostAPIView.as_view()),
 
+    # Dashboard APIS
+    path('author/dashboard/stats/<user_id>/', api_views.DashboardStats.as_view()),
 ]
