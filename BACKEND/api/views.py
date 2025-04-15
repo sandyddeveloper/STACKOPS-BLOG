@@ -7,6 +7,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
 from django.db.models import Sum
+from django.shortcuts import get_object_or_404
 # Restframework
 from rest_framework import status
 from rest_framework.decorators import api_view, APIView
@@ -46,3 +47,20 @@ class ProfileView(generics.RetrieveUpdateAPIView):
         user = api_models.Profile.objects.get(id=user_id)
         profile = api_models.Profile.objects.get(user=user)
         return profile
+
+class CategoryListAPIView(generics.ListAPIView):
+    serializer_class = api_serializer.CategorySerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        return api_models.Category.objects.all()
+    
+
+class PostCategoryListAPIView(generics.ListAPIView):
+    serializer_class = api_serializer.PostSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        category_slug = self.kwargs['category_slug'] 
+        category = get_object_or_404(api_models.Category, slug=category_slug)
+        return api_models.Post.objects.filter(category=category, status="Active")

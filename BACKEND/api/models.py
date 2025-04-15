@@ -72,50 +72,50 @@ class Category(models.Model):
     def __str__(self):
         return self.title
     
-    # class Meta:
-    #     verbose_name_plural = "Category"
-    
+    class Meta:
+        verbose_name_plural = "Category"
+
     def save(self, *args, **kwargs):
         if self.slug == "" or self.slug == None:
             self.slug = slugify(self.title)
         super(Category, self).save(*args, **kwargs)
-
+    
     def post_count(self):
-        return Post.objects.filter(category=self).count
-
+        return Post.objects.filter(category=self).count()
 
 class Post(models.Model):
-
-    STATUS = (
-        ("Active","Active"),
-        ("Draft","Draft"),
-        ("Disables","Disables"),
+    STATUS = ( 
+        ("Active", "Active"), 
+        ("Draft", "Draft"),
+        ("Disabled", "Disabled"),
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
     image = models.FileField(upload_to="image", null=True, blank=True)
-    _state = models.CharField(choices=STATUS, max_length=100, default="Active")
+    description = models.TextField(null=True, blank=True)
+    tags = models.CharField(max_length=100, default="Untagged")
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name='posts')
+    status = models.CharField(max_length=100, choices=STATUS, default="Active")
     view = models.IntegerField(default=0)
-    likes = models.ManyToManyField(User, blank=True, related_name="Likes_User")
+    likes = models.ManyToManyField(User, blank=True, related_name="likes_user")
     slug = models.SlugField(unique=True, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-
+    
     def __str__(self):
         return self.title
     
     class Meta:
-        ordering = ["-date"]
         verbose_name_plural = "Post"
-    
-    
+
     def save(self, *args, **kwargs):
         if self.slug == "" or self.slug == None:
             self.slug = slugify(self.title) + "-" + shortuuid.uuid()[:2]
         super(Post, self).save(*args, **kwargs)
+    
+    def comments(self):
+        return Comment.objects.filter(post=self).order_by("-id")
 
 
 class Comment(models.Model):
