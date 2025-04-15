@@ -20,4 +20,8 @@ urlpatterns = [
 
     # Dashboard APIS
     path('author/dashboard/stats/<user_id>/', api_views.DashboardStats.as_view()),
+    path('author/dashboard/comment-list/<user_id>', api_views.DashboardCommentLists.as_view()),
+    path('author/dashboard/notification-list/<user_id>/', api_views.DashboardNotificationsList.as_view()),
+    path('author/dashboard/notification-mark-seen/', api_views.DashboardMarkNotificationAsSeen.as_view()),
+    path('author/dashboard/reply-comment/', api_views.DashboardCommentAPIView.as_view()),
 ]
