@@ -2,8 +2,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Index from './views/core/Index'
 import MainWrapper from './layouts/MainWrapper'
 import Home from './pages/Home'
-import LoginForm from './components/auth/LoginForm'
-import RegisterForm from './components/auth/RegisterForm'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
 function App() {
   return (
     <>
@@ -11,8 +11,8 @@ function App() {
         <MainWrapper>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/auth/login" element={<LoginForm />} />
-            <Route path="/auth/register" element={<RegisterForm />} />
+            <Route path="/auth/login" element={<LoginPage />} />
+            <Route path="/auth/register" element={<RegisterPage />} />
             <Route path="/blog" element={<Index />} />
           </Routes>
         </MainWrapper>
