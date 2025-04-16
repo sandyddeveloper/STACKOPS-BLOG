@@ -1,14 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // remove if you're using plain hrefs
+import { Link } from 'react-router-dom'; 
+import Footer from '../components/ui/Footer';
 
 const NotFoundPage = () => {
   return (
+    <>
     <main className="min-h-screen bg-[#0b1222] flex flex-col justify-center items-center px-6 py-24 sm:py-32 text-white">
       {/* Logo */}
       <div className="absolute top-8 left-8">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="https://discordbanners.vercel.app/static/img/logo.svg" // replace with your logo path
+            src="https://discordbanners.vercel.app/static/img/logo.svg" 
             alt="Logo"
             className="w-8 h-8"
           />
@@ -43,7 +45,10 @@ const NotFoundPage = () => {
           </Link>
         </div>
       </div>
+
     </main>
+    <Footer />
+    </>
   );
 };
 

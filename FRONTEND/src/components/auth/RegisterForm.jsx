@@ -1,6 +1,7 @@
 "use client";
 import { useNavigate } from "react-router-dom"
 import { HiOutlineHome } from "react-icons/hi";
+import Footer from "../ui/Footer";
 
 export default function RegisterForm() {
     const navigate = useNavigate()
@@ -105,6 +106,7 @@ export default function RegisterForm() {
           </p>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
