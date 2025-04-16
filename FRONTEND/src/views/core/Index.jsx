@@ -6,11 +6,14 @@ import ContentCardList from "../../components/main/ContentCardList";
 import BlogList from "../../components/main/BlogCard";
 import TechSection from "../../components/main/TechSection";
 import TechTicker from "../../components/ui/TechScroll";
+import BlogFooter from "../../components/ui/BlogFooter";
+import MixedSection from "../../components/main/MixedBlogSection";
 
 const Index = () => {
   const scrollRef = useRef(null);
 
   return (
+    <main>
     <div className="bg-[#dde7f5]">
       <MainNavbar />
       <CategorySection ref={scrollRef} />
@@ -24,8 +27,11 @@ const Index = () => {
       <BlogList />
       </div>
       <TechTicker />
-      <TechSection />
+      <TechSection />\
+      <MixedSection />
     </div>
+    <BlogFooter />
+    </main>
   );
 };
 
