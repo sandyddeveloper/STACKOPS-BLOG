@@ -17,7 +17,7 @@ const BlogCard = ({
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="bg-white rounded-3xl shadow-md overflow-hidden border-8 border-white transition-all hover:shadow-lg max-w-xl mx-auto">
+    <div className="bg-white rounded-3xl shadow-md overflow-hidden  border-[20px] border-white transition-all hover:shadow-lg max-w-xl mx-auto">
       <div className="w-full h-56 overflow-hidden">
         <img src={image} alt="Blog" className="w-full h-full rounded-2xl  object-cover" />
       </div>

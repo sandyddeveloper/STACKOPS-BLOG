@@ -4,6 +4,8 @@ import CategorySection from "../../components/ui/CategorySection";
 import CategoryTicker from "../../components/ui/CategoryScroll";
 import ContentCardList from "../../components/main/ContentCardList";
 import BlogList from "../../components/main/BlogCard";
+import TechSection from "../../components/main/TechSection";
+import TechTicker from "../../components/ui/TechScroll";
 
 const Index = () => {
   const scrollRef = useRef(null);
@@ -18,10 +20,11 @@ const Index = () => {
           <ContentCardList />
         </div>
       </div>
-      <div className="px-10">
+      <div className="px-0 sm:px-0 md:px-20 py-[100px]">
       <BlogList />
-
       </div>
+      <TechTicker />
+      <TechSection />
     </div>
   );
 };
