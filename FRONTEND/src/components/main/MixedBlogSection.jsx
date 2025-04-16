@@ -27,7 +27,6 @@ const MixedSection = () => {
   return (
     <div className="px-6 py-12">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="flex items-center gap-4 mb-10">
           <h2 className="text-6xl font-thin tracking-tight">MIXED</h2>
           <p className="text-lg text-gray-700">
@@ -35,35 +34,25 @@ const MixedSection = () => {
           </p>
         </div>
 
-        {/* Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((item, idx) => (
             <div
               key={idx}
               className="relative rounded-md overflow-hidden shadow-sm group cursor-pointer"
             >
-              {/* Image */}
               <img
                 src={item.image}
                 alt={item.title}
                 className="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
         
-              {/* Bottom gradient (default) and full overlay on hover */}
               <div className="absolute inset-0">
-                {/* Before hover: bottom gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-100 group-hover:opacity-0 transition-opacity duration-300"></div>
-        
-                {/* On hover: full dark overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-        
-              {/* Tag */}
               <span className="absolute top-3 right-3 bg-black text-white px-3 py-1 text-sm rounded-md z-10">
                 {item.tag}
               </span>
-        
-              {/* Title */}
               <div className="absolute bottom-3 left-3 text-white text-sm font-medium z-10">
                 {item.title}
               </div>

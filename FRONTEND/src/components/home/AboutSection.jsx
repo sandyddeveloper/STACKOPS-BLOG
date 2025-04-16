@@ -24,7 +24,7 @@ export default function About() {
                   <div className="absolute inset-x-10 top-10 bottom-0 overflow-hidden rounded-t-[12cqw] border-x-[3cqw] border-t-[3cqw] border-gray-700 bg-gray-900 shadow-2xl">
                     <img
                       className="size-full object-cover object-top"
-                      src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-mobile-friendly.png"
+                      src="https://discordbanners.vercel.app/static/img/post.jpg"
                       alt="Mobile friendly blog UI"
                     />
                   </div>
