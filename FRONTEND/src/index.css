@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dde7f5;
+  }
+  
+
+@keyframes loop-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .loop-scroll-container {
+    display: flex;
+    width: max-content;
+    animation: loop-scroll 50s linear infinite;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+@keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+  }
+  
