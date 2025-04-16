@@ -47,10 +47,10 @@ const AboutPage = () => {
               <ul class="flex lg:items-center max-lg:gap-4 max-lg:mb-4 flex-col mt-4 lg:flex-1 md:mt-0 lg:flex-row">
                 <li>
                   <a
-                    href="javascript:;"
+                    href="/"
                     class="text-gray-500 text-sm font-medium hover:text-prime-blue-700 transition-all duration-500 mb-2 block lg:mr-6 lg:text-base md:mb-0 md:mr-3 hover:text-gray-900"
                   >
-                    Go Back
+                   ← Go Back
                   </a>
                 </li>
               </ul>
