@@ -22,7 +22,7 @@ export default function MNavbar() {
       {/* Center: Desktop Menu */}
       <ul className="hidden md:flex space-x-6 text-sm font-semibold">
         <li>
-          <a href="#" className="hover:opacity-80">
+          <a href="/blog" className="hover:opacity-80">
             HOME
           </a>
         </li>
@@ -118,7 +118,7 @@ export default function MNavbar() {
 
             {/* Sidebar links */}
             <ul className="text-sm font-medium space-y-4 text-gray-700">
-              <li className="flex items-center space-x-2 hover:bg-gray-100 px-3 py-2 rounded">
+              <li className="flex items-center space-x-2 hover:bg-gray-100 px-3 py-2 rounded" onClick={() => navigate("/blog")}>
                 <Home className="w-4 h-4" />
                 <span>HOME</span>
               </li>
