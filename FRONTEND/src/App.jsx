@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AboutPage from './pages/AboutPage'
+import ProfilePage from './components/main/ProfilePage'
 function App() {
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
             <Route path="/auth/register" element={<RegisterPage />} />
             <Route path="/blog" element={<Index />} />
             <Route path="/aboutus" element={<AboutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Routes>
         </MainWrapper>
       </BrowserRouter>
