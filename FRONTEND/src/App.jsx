@@ -7,6 +7,7 @@ import RegisterPage from './pages/RegisterPage'
 import NotFoundPage from './pages/NotFoundPage'
 import AboutPage from './pages/AboutPage'
 import ProfilePage from './components/main/ProfilePage'
+import BlogDetailPage from './components/main/BlogDetailPage'
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/blog" element={<Index />} />
             <Route path="/aboutus" element={<AboutPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/blog-detail" element={<BlogDetailPage />} />
           </Routes>
         </MainWrapper>
       </BrowserRouter>
