@@ -1,0 +1,159 @@
+@import 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap';
+@import "tailwindcss";
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #dde7f5;
+    font-family: 'Manrope', sans-serif;
+  }
+  
+@keyframes loop-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .loop-scroll-container {
+    display: flex;
+    width: max-content;
+    animation: loop-scroll 50s linear infinite;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+@keyframes infinite-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .infinite-scroll {
+    animation: infinite-scroll 40s linear infinite;
+  }
+  
+  
+  
+  .animate-slide-in {
+    animation: slideIn 0.3s ease forwards;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+
+
+  ::-webkit-scrollbar-thumb {
+    background: purple;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+
+
+.Mainapp {
+  --font-display: 'Open Sans', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  --color-main-bg: #FAFBFB;
+  --color-main-dark-bg: #20232A;
+  --color-secondary-dark-bg: #33373E;
+  --color-light-gray: #F7F7F7;
+  --color-half-transparent: rgba(0, 0, 0, 0.5);
+
+  --border-color-default: rgba(0, 0, 0, 0.1);
+  --border-width-1: 1px;
+
+  --width-400: 400px;
+  --width-760: 760px;
+  --width-780: 780px;
+  --width-800: 800px;
+  --width-1000: 1000px;
+  --width-1200: 1200px;
+  --width-1400: 1400px;
+
+  --height-80: 80px;
+  --min-height-590: 590px;
+
+  --hero-pattern: url('https://i.ibb.co/MkvLDfb/Rectangle-4389.png');
+}
+
+
+
+.bg-main-bg {
+  background-color: var(--color-main-bg);
+}
+.bg-main-dark-bg {
+  background-color: var(--color-main-dark-bg);
+}
+.bg-secondary-dark-bg {
+  background-color: var(--color-secondary-dark-bg);
+}
+.bg-light-gray {
+  background-color: var(--color-light-gray);
+}
+.bg-half-transparent {
+  background-color: var(--color-half-transparent);
+}
+
+.border-1 {
+  border-width: var(--border-width-1);
+}
+.border-color {
+  border-color: var(--border-color-default);
+}
+
+.w-400 {
+  width: var(--width-400);
+}
+.w-760 {
+  width: var(--width-760);
+}
+/* ... add more width classes as needed */
+
+.h-80 {
+  height: var(--height-80);
+}
+.min-h-590 {
+  min-height: var(--min-height-590);
+}
+
+.bg-hero-pattern {
+  background-image: var(--hero-pattern);
+}
+
+body {
+  font-family: var(--font-body);
+}
