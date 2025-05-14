@@ -42,6 +42,7 @@ export default function RegisterForm() {
         bioData.password,
         bioData.password2
       );
+      navigate("auth/login")
       if (error) {
         alert(JSON.stringify(error));
         resetForm();

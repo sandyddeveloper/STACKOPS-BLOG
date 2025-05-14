@@ -82,7 +82,7 @@ const BlogFooter = () => {
     © 2025 <span className="font-semibold text-black">StackOps</span>. Designed & Developed by{' '}
   </span>
   <a
-    href="https://santhosh.devxnet.cloud/"
+    href="https://txsandy.devxnet.cloud/"
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block font-semibold text-purple-500 hover:text-purple-600 transition-colors duration-300"

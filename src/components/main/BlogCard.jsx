@@ -46,7 +46,11 @@ const BlogCard = ({
             className={`border-t-4 border-purple-400 rounded-xl transition-all duration-300 ease-in-out ${hovered ? "w-10/12" : "w-0"}`}
           ></div>
         </motion.div>
-        <p className="text-gray-600 text-sm mb-4">{description}</p>
+        <p className="text-gray-600 text-sm mb-4">
+  {description.split(" ").slice(0, 30).join(" ")}
+  {description.split(" ").length > 30 && '...'}
+</p>
+
 
         <hr className="border-gray-200 my-4" />
 
